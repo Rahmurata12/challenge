@@ -1,0 +1,22 @@
+@charset "UTF-8";
+
+.titulo {
+	padding-left: 15px;
+	padding-top:10px;
+}
+
+.form {
+	width: 60%;
+	margin-left: 30px;
+}
+
+.nome {
+    width: 20%;
+
+}
+.data {
+    width: 20%;
+}
+.rgcpf{
+    width: 15%;
+}
