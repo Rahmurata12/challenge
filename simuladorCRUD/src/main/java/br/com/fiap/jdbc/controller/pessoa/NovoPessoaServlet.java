@@ -29,14 +29,15 @@ public class NovoPessoaServlet extends HttpServlet {
 		String nomePessoa = request.getParameter("nome");
 		String rgPessoa = request.getParameter("rg");
 		String cpfPessoa = request.getParameter("cpf");
+		String emailPessoa = request.getParameter("email");
 		String dataNascPessoaStr = request.getParameter("dataNasc");
-		SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
+		SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yy");
 		try {
 			java.util.Date udom = sdf.parse(dataNascPessoaStr);
 			long ms1 = udom.getTime();
 			java.sql.Date sqdom = new java.sql.Date(ms1);
 			int cd_generoPessoa = Integer.parseInt(request.getParameter("cd_generoPessoa"));
-			Pessoa pessoa = new Pessoa(nomePessoa, rgPessoa, cpfPessoa, sqdom, cd_generoPessoa);
+			Pessoa pessoa = new Pessoa(nomePessoa, rgPessoa, cpfPessoa, emailPessoa,sqdom, cd_generoPessoa);
 			this.pessoaDAO.salvarComGenero(pessoa);
 			response.sendRedirect("listaPessoa");
 		} catch (ParseException e) {

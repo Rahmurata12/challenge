@@ -8,6 +8,7 @@ public class Pessoa {
 	private String nome;
 	private String RG;
 	private String CPF;
+	private String EMAIL;
 	private Date data_nascimento;
 	private int cd_genero;
 
@@ -43,6 +44,14 @@ public class Pessoa {
 		CPF = cPF;
 	}
 
+	public String getEMAIL() {
+		return EMAIL;
+	}
+
+	public void setEMAIL(String eMAIL) {
+		EMAIL = eMAIL;
+	}
+
 	public Date getData_nascimento() {
 		return data_nascimento;
 	}
@@ -59,16 +68,19 @@ public class Pessoa {
 		this.cd_genero = cd_genero;
 	}
 
-	public Pessoa(String nome, String rG, String cPF, Date data_nascimento, int cd_genero) {
+	public Pessoa() {
+
+	}
+
+	public Pessoa(String nome, String rG, String cPF, String eMAIL, Date data_nascimento, int cd_genero)
+	{
+		super();
 		this.nome = nome;
 		RG = rG;
 		CPF = cPF;
+		EMAIL = eMAIL;
 		this.data_nascimento = data_nascimento;
 		this.cd_genero = cd_genero;
 	}
-
-	public Pessoa() {
-	}
-
 
 }

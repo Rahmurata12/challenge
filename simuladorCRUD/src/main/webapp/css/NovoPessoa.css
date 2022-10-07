@@ -1,0 +1,127 @@
+@charset "UTF-8";
+
+* {
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+}
+
+body, html {
+	height: 100%;
+	font-family: Poppins-Regular, sans-serif;
+}
+
+@font-face {
+	font-family: Poppins-Regular;
+	src: url('../fonts/poppins/Poppins-Regular.ttf');
+}
+
+@font-face {
+	font-family: Poppins-Bold;
+	src: url('../fonts/poppins/Poppins-Bold.ttf');
+}
+
+@font-face {
+	font-family: Poppins-Medium;
+	src: url('../fonts/poppins/Poppins-Medium.ttf');
+}
+
+@font-face {
+	font-family: Montserrat-Bold;
+	src: url('../fonts/montserrat/Montserrat-Bold.ttf');
+}
+
+h1, h2, h3, h4, h5, h6 {
+	margin: 0px;
+}
+
+.login100-form-title {
+	font-size: 40px;
+	color: #333333;
+	line-height: 1.2;
+	text-align: center;
+	width: 100%;
+	display: block;
+	padding-bottom: 54px;
+}
+
+.titulo {
+	padding-left: 15px;
+	padding-top: 10px;
+}
+
+.limiter {
+	width: 100%;
+	margin: 0 auto;
+}
+
+.container-login100 {
+	width: 100%;
+	min-height: 100vh;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	padding: 15px;
+	background: #9053c7;
+	background: -webkit-linear-gradient(-135deg, #c850c0, #4158d0);
+	background: -o-linear-gradient(-135deg, #c850c0, #4158d0);
+	background: -moz-linear-gradient(-135deg, #c850c0, #4158d0);
+	background: linear-gradient(-135deg, #c850c0, #4158d0);
+}
+
+.wrap-login100 {
+	width: 960px;
+	background: #fff;
+	border-radius: 10px;
+	overflow: hidden;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	padding: 80px 110px 80px 80px;
+}
+
+.login100-form {
+	width: 290px;
+}
+
+button {
+	outline: none !important;
+	border: none;
+	background: transparent;
+}
+
+button:hover {
+	cursor: pointer;
+}
+
+.login100-pic {
+	width: 316px;
+}
+
+.login100-pic img {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: flex;
+	flex-wrap: wrap;
+	float: left;
+	max-width: 100%;
+}
+
+.form {
+	width: 100%;
+}
+
+.Registro {
+	font-weight: 600;
+}
+
+#fundo {
+	width: fit-content;
+}
+
