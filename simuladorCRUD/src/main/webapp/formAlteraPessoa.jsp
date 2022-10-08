@@ -13,17 +13,23 @@ Pessoa = pessoaDAO.buscaCd_pessoa(cd_pessoa);
 <head>
 <meta charset="ISO-8859-1">
 <title>Altera Pessoa</title>
-<link href="css/bootstrap.min.css" rel="stylesheet">
-<link href="css/form.css" rel="stylesheet">
+<link href="css/NovoPessoa.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 </head>
 <body>
 	
-	<h2 class="titulo">Alterar Pessoa:</h2>
-	<br>
 	<div class="form">
-		<form name="frm" action="/simuladorCRUD/alterarPessoa" method="post">
-			<div class="form-group">
-				<input type="hidden" name="cd_pessoa" value="<%=Pessoa.getCd_pessoa()%>" class="caixaMenor">
+        <div class="container-login100">
+            <div class="wrap-login100">
+        <form name="frm" action="/simuladorCRUD/novoPessoa" method="post">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+            <h2 class="titulo">Criar conta:</h2>
+            <br>
+
+            <div class="form-group">
+                <input type="hidden" name="cd_pessoa" value="<%=Pessoa.getCd_pessoa()%>" class="caixaMenor">
 				<label>Nome</label> <br> <input type=text name="nome" class="form-control nome" value="<%=Pessoa.getNome()%>"> <br>
 				<label>RG</label> <br> <input type="text" name="rg" class="form-control rgcpf" value="<%=Pessoa.getRG()%>"> <br> 
 				<label>CPF</label> <br> <input type=text name="cpf" class="form-control rgcpf" value="<%=Pessoa.getCPF()%>"> <br>
@@ -42,12 +48,15 @@ Pessoa = pessoaDAO.buscaCd_pessoa(cd_pessoa);
 					<option value=9>CISGÊNERO</option>
 					<option value=10>QUEER</option>
 				</select> <br> <br>
-			</div>
-			<br> 
-			<br> 
-			<input type="submit" name="enviar" class="btn btn-primary" value="Enviar">
-		</form>
-	</div>
-
+            </div>
+            <input type="submit" name="enviar" class="btn btn-primary" value="Junta-se a nós!">
+                    </div>
+                </div>
+            </div>
+        </form>
+            </div>
+        </div>
+    </div>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 </body>
 </html>
