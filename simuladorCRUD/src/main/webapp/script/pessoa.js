@@ -8,3 +8,11 @@ function excluirPessoas(cd_pessoa) {
 function editarPessoas(cd_pessoa) {
 	window.location.href = "alterarPessoa?cd_pessoa=" + cd_pessoa
 }
+
+function compraPessoas(cd_pessoa) {
+	window.location.href = "alterarPessoa?cd_pessoa=" + cd_pessoa
+}
+
+function novoPessoa() {
+	window.location.href = "novoPessoa"
+}

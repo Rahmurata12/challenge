@@ -61,7 +61,7 @@ listarPessoas = PessoaDAO.listarTodos();
 				<td>
 					<input type="button" value="Excluir" class="btn btn-info" onclick="excluirPessoas(<%=Pessoa.getCd_pessoa()%>)" >
 					<input type="button" value="Editar" class="btn btn-info" onclick="editarPessoas(<%=Pessoa.getCd_pessoa()%>)" >
-					<input type="button" value="Compras" class="btn btn-info" >
+					<input type="button" value="Compras" class="btn btn-info" onclick="compraPessoas(<%=Pessoa.getCd_pessoa()%>)" >
 				</td>
 			</tr>
 			<%
@@ -70,8 +70,7 @@ listarPessoas = PessoaDAO.listarTodos();
 		</tbody>
                                             </table>
 
-
-                                            <a href="/simuladorCRUD/novoPessoa">Novo</a>
+								<input type="button" value="Novo" class="btn btn-info" onclick="novoPessoa()" >									
                                         </div>
                                     </div>
                                 </div>
