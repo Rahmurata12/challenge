@@ -1,0 +1,73 @@
+CREATE TABLE cartao (
+    cd_cartao      NUMBER(7) NOT NULL,
+    tipo           VARCHAR2(10) NOT NULL,
+    titulo_cartao  VARCHAR2(30) NOT NULL,
+    data_expedicao DATE NOT NULL,
+    cvv            NUMBER(3) NOT NULL,
+    numero_cartao  NUMBER(16) NOT NULL,
+    senha          NUMBER(4) NOT NULL,
+    conta_cd_conta NUMBER(7) NOT NULL
+);
+
+ALTER TABLE cartao ADD CONSTRAINT cartao_pk PRIMARY KEY ( cd_cartao );
+
+CREATE TABLE compra (
+    cd_compra      NUMBER(10) NOT NULL,
+    data_compra    DATE NOT NULL,
+    horario_compra DATE NOT NULL,
+    status         VARCHAR2(10) NOT NULL,
+    local_compra   VARCHAR2(30) NOT NULL,
+    conta_cd_conta NUMBER(7) NOT NULL
+);
+
+ALTER TABLE compra ADD CONSTRAINT compra_pk PRIMARY KEY ( cd_compra );
+
+CREATE TABLE conta (
+	cd_conta         NUMBER(7) NOT NULL,
+    renda_mensal     NUMBER(9, 2) NOT NULL,
+    fatura_mensal    NUMBER(9, 2) NOT NULL,
+    cd_pessoa        NUMBER(7) NOT NULL);
+
+ALTER TABLE conta ADD CONSTRAINT conta_pk PRIMARY KEY ( cd_conta );
+
+CREATE TABLE genero (
+    cd_genero NUMBER(2) NOT NULL,
+    genero    VARCHAR2(15) NOT NULL
+);
+
+ALTER TABLE genero ADD CONSTRAINT genero_pk PRIMARY KEY ( cd_genero );
+
+CREATE TABLE login (
+    usuario  VARCHAR2(30) NOT NULL,
+    senha    VARCHAR2(30) NOT NULL,
+    cd_login NUMBER(7) NOT NULL
+);
+
+ALTER TABLE login ADD CONSTRAINT login_pk PRIMARY KEY ( cd_login );
+
+CREATE TABLE pessoa (
+    cd_pessoa        NUMBER(7) NOT NULL,
+    nome             VARCHAR2(30) NOT NULL,
+    rg               VARCHAR2(30) NOT NULL,
+    cpf              VARCHAR2(30) NOT NULL,
+    email            VARCHAR2(30) NOT NULL,
+    data_nascimento  DATE NOT NULL,
+    genero_cd_genero NUMBER(2) NOT NULL);
+
+ALTER TABLE pessoa ADD CONSTRAINT pessoa_pk PRIMARY KEY ( cd_pessoa );
+
+ALTER TABLE compra
+    ADD CONSTRAINT compra_conta_fk FOREIGN KEY ( conta_cd_conta )
+        REFERENCES conta ( cd_conta );
+
+ALTER TABLE conta
+    ADD CONSTRAINT conta_cartao_fk FOREIGN KEY ( cartao_cd_cartao )
+        REFERENCES cartao ( cd_cartao );
+
+ALTER TABLE pessoa
+    ADD CONSTRAINT pessoa_genero_fk FOREIGN KEY ( genero_cd_genero )
+        REFERENCES genero ( cd_genero );
+
+ALTER TABLE conta
+    ADD CONSTRAINT conta_pessoa_fk FOREIGN KEY ( CD_PESSOA )
+        REFERENCES pessoa ( CD_PESSOA );
