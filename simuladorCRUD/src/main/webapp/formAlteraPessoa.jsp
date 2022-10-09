@@ -49,7 +49,7 @@ Pessoa = pessoaDAO.buscaCd_pessoa(cd_pessoa);
 					<option value=10>QUEER</option>
 				</select> <br> <br>
             </div>
-            <input type="submit" name="enviar" class="btn btn-primary" value="Salvar">
+            <input type="submit" name="enviar" class="btn btn-info" value="Salvar">
                     </div>
                 </div>
             </div>

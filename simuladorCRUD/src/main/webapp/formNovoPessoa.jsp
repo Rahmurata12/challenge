@@ -40,7 +40,7 @@
                     <option value=10>QUEER</option>
                 </select> <br> <br>
             </div>
-            <input type="submit" name="enviar" class="btn btn-primary" value="Junta-se a nós!">
+            <input type="submit" name="enviar" class="btn btn-info" value="Junta-se a nós!">
                     </div>
                 </div>
             </div>

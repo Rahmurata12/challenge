@@ -17,14 +17,15 @@ public class teste {
 		List<Compra> compras = new ArrayList<Compra>();
 		compras = compraDAO.listarTodos(102);
 		
+		/*
 		for (Compra compra : compras) {
 			System.out.println(compra.getCd_pessoa());
 			System.out.println(compra.getDate_compra());
 			System.out.println(compra.getStatus());
 			System.out.println(compra.getLocal_compra());
-		}
+		}*/
 		
-		/*
+		
 		PessoaDAO pessoDAO = new PessoaDAO();
 		List<Pessoa> pessoas = new ArrayList<Pessoa>();
 		
@@ -33,7 +34,7 @@ public class teste {
 		
 		for (Pessoa pessoa : pessoas) {
 			System.out.println(pessoa.getNome());
-		}*/
+		}
 		/*
 		 * Produto produto1 = new Produto(); produto1.setNome("teste");
 		 * produto1.setDescricao("teste"); produto1.setSKU("teste");
