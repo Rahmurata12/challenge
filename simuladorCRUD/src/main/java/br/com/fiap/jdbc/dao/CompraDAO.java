@@ -43,5 +43,19 @@ public class CompraDAO {
 		}
 	}
 	
-
+	public void salvar(Compra compra) {
+		try {
+			String sql = "insert into compra (DATA_COMPRA,STATUS,LOCAL_COMPRA,CD_PESSOA) values(?,?,?,?)";
+			PreparedStatement stmt = connection.prepareStatement(sql);
+			
+			stmt.setDate(1, compra.getDate_compra());
+			stmt.setString(2, compra.getStatus());
+			stmt.setString(3, compra.getLocal_compra());
+			stmt.setInt(4, compra.getCd_pessoa());
+			stmt.execute();
+			stmt.close();
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
+	}
 }
