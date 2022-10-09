@@ -21,7 +21,7 @@ Pessoa = pessoaDAO.buscaCd_pessoa(cd_pessoa);
 	<div class="form">
         <div class="container-login100">
             <div class="wrap-login100">
-        <form name="frm" action="/simuladorCRUD/novoPessoa" method="post">
+        <form name="frm" action="/simuladorCRUD/alterarPessoa" method="post">
             <div class="container">
                 <div class="row">
                     <div class="col-12 col-sm-12 col-md-12 col-lg-12">
@@ -49,7 +49,7 @@ Pessoa = pessoaDAO.buscaCd_pessoa(cd_pessoa);
 					<option value=10>QUEER</option>
 				</select> <br> <br>
             </div>
-            <input type="submit" name="enviar" class="btn btn-primary" value="Junta-se a nós!">
+            <input type="submit" name="enviar" class="btn btn-primary" value="Salvar">
                     </div>
                 </div>
             </div>

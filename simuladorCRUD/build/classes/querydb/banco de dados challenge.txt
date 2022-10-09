@@ -14,11 +14,11 @@ ALTER TABLE cartao ADD CONSTRAINT cartao_pk PRIMARY KEY ( cd_cartao );
 CREATE TABLE compra (
     cd_compra      NUMBER(10) NOT NULL,
     data_compra    DATE NOT NULL,
-    horario_compra DATE NOT NULL,
     status         VARCHAR2(10) NOT NULL,
     local_compra   VARCHAR2(30) NOT NULL,
-    conta_cd_conta NUMBER(7) NOT NULL
+    cd_pessoa NUMBER(7) NOT NULL
 );
+
 
 ALTER TABLE compra ADD CONSTRAINT compra_pk PRIMARY KEY ( cd_compra );
 
@@ -57,8 +57,8 @@ CREATE TABLE pessoa (
 ALTER TABLE pessoa ADD CONSTRAINT pessoa_pk PRIMARY KEY ( cd_pessoa );
 
 ALTER TABLE compra
-    ADD CONSTRAINT compra_conta_fk FOREIGN KEY ( conta_cd_conta )
-        REFERENCES conta ( cd_conta );
+    ADD CONSTRAINT compra_pessoa_fk FOREIGN KEY ( cd_pessoa )
+        REFERENCES pessoa ( cd_pessoa );
 
 ALTER TABLE conta
     ADD CONSTRAINT conta_cartao_fk FOREIGN KEY ( cartao_cd_cartao )
@@ -80,6 +80,18 @@ BEGIN
  
 SELECT cdgenero_sequence.NEXTVAL
 INTO :NEW.CD_GENERO
+FROM DUAL;
+END;
+/
+
+CREATE SEQUENCE cdcompra_sequence START WITH 1 INCREMENT BY 1;
+
+CREATE OR REPLACE TRIGGER tr_insert_cd_compra
+BEFORE INSERT ON compra FOR EACH ROW
+BEGIN
+ 
+SELECT cdcompra_sequence.NEXTVAL
+INTO :NEW.cd_compra
 FROM DUAL;
 END;
 /

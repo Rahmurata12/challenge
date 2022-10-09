@@ -32,7 +32,7 @@ public class AlteraPessoaServlet extends HttpServlet {
 		String cpfPessoa = request.getParameter("cpf");
 		String emailPessoa = request.getParameter("email");
 		String dataNascPessoaStr = request.getParameter("dataNasc");
-		SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yy");
+		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 		try {
 			java.util.Date udom = sdf.parse(dataNascPessoaStr);
 			long ms1 = udom.getTime();
