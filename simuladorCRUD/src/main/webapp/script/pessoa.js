@@ -9,8 +9,8 @@ function editarPessoas(cd_pessoa) {
 	window.location.href = "alterarPessoa?cd_pessoa=" + cd_pessoa
 }
 
-function compraPessoas() {
-	window.location.href = "listaCompra"
+function compraPessoas(cd_pessoa) {
+	window.location.href = "listaCompra?cd_pessoa=" + cd_pessoa
 }
 
 function novoPessoa() {

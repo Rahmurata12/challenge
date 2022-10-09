@@ -3,20 +3,37 @@ package teste;
 import java.util.ArrayList;
 import java.util.List;
 
-import br.com.fiap.jdbc.dao.GeneroDAO;
-import br.com.fiap.jdbc.model.Genero;
+import br.com.fiap.jdbc.dao.CompraDAO;
+import br.com.fiap.jdbc.dao.PessoaDAO;
+import br.com.fiap.jdbc.model.Compra;
+import br.com.fiap.jdbc.model.Pessoa;
 
 public class teste {
 
 	public static void main(String[] args) {
 
-		GeneroDAO generoDAO = new GeneroDAO();
+		CompraDAO compraDAO = new CompraDAO();
 		
-		List<Genero> generos = new ArrayList<Genero>();
-		generos = generoDAO.listarComGenero();
-		for (Genero genero : generos) {
-			System.out.println(genero.getGenero());
+		List<Compra> compras = new ArrayList<Compra>();
+		compras = compraDAO.listarTodos(102);
+		
+		for (Compra compra : compras) {
+			System.out.println(compra.getCd_pessoa());
+			System.out.println(compra.getDate_compra());
+			System.out.println(compra.getStatus());
+			System.out.println(compra.getLocal_compra());
 		}
+		
+		/*
+		PessoaDAO pessoDAO = new PessoaDAO();
+		List<Pessoa> pessoas = new ArrayList<Pessoa>();
+		
+		pessoas = pessoDAO.listarTodos();
+		
+		
+		for (Pessoa pessoa : pessoas) {
+			System.out.println(pessoa.getNome());
+		}*/
 		/*
 		 * Produto produto1 = new Produto(); produto1.setNome("teste");
 		 * produto1.setDescricao("teste"); produto1.setSKU("teste");

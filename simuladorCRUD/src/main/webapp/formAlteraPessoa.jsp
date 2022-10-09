@@ -25,17 +25,17 @@ Pessoa = pessoaDAO.buscaCd_pessoa(cd_pessoa);
             <div class="container">
                 <div class="row">
                     <div class="col-12 col-sm-12 col-md-12 col-lg-12">
-            <h2 class="titulo">Criar conta:</h2>
+            <h2 class="titulo">Alterar Pessoa:</h2>
             <br>
 
             <div class="form-group">
                 <input type="hidden" name="cd_pessoa" value="<%=Pessoa.getCd_pessoa()%>" class="caixaMenor">
-				<label>Nome</label> <br> <input type=text name="nome" class="form-control nome" value="<%=Pessoa.getNome()%>"> <br>
-				<label>RG</label> <br> <input type="text" name="rg" class="form-control rgcpf" value="<%=Pessoa.getRG()%>"> <br> 
-				<label>CPF</label> <br> <input type=text name="cpf" class="form-control rgcpf" value="<%=Pessoa.getCPF()%>"> <br>
-				<label>Email</label> <br> <input type="text" name="email" class="form-control" value="<%=Pessoa.getEMAIL()%>"> <br>  
-				<label>Data de Nascimento</label> <br> <input type=date name="dataNasc" class="form-control data"> <br> 
-				<label for="categoria">Generos:</label> <br>
+				<label><b>Nome</b></label> <br> <input type=text name="nome" class="form-control nome" value="<%=Pessoa.getNome()%>"> <br>
+				<label><b>RG</b></label> <br> <input type="text" name="rg" class="form-control rgcpf" value="<%=Pessoa.getRG()%>"> <br> 
+				<label><b>CPF</b></label> <br> <input type=text name="cpf" class="form-control rgcpf" value="<%=Pessoa.getCPF()%>"> <br>
+				<label><b>Email</b></label> <br> <input type="text" name="email" class="form-control" value="<%=Pessoa.getEMAIL()%>"> <br>  
+				<label><b>Data de Nascimento</b></label> <br> <input type=date name="dataNasc" class="form-control data"> <br> 
+				<label for="categoria"><b>Generos</b></label> <br>
 				<select name="cd_generoPessoa" class="form-select form-select-sm" aria-label="Default select example" id="genero">
 					<option value=1>MASCULINO</option>
 					<option value=2>FEMENINO</option>

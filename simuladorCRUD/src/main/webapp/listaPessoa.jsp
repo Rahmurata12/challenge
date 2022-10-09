@@ -35,13 +35,13 @@ listarPessoas = PessoaDAO.listarTodos();
                                                 </div>
                                                 <thead>
                                                     <tr>
-                                                        <th>CD_PESSOA</th>
-                                                        <th>NOME</th>
-                                                        <th>RG</th>
-                                                        <th>CPF</th>
+                                                        <th>Id</th>
+                                                        <th>Nome</th>
+                                                        <th>Rg</th>
+                                                        <th>Cpf</th>
                                                         <th>Email</th>
-                                                        <th>DATA_NASCIMENTO</th>
-                                                        <th>GENERO</th>
+                                                        <th>Data de nascimento</th>
+                                                        <th>Gênero</th>
                                                         <th></th>
                                                     <tr>
                                                 </thead>

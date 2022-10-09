@@ -21,12 +21,12 @@
             <br>
 
             <div class="form-group">
-                <label>Nome</label> <br> <input type=text name="nome" class="form-control nome" placeholder="nome"> <br>
-                <label>RG</label> <br> <input type="text" name="rg" class="form-control rgcpf" placeholder="rg"> <br> 
-                <label>CPF</label> <br> <input type="text" name="cpf" class="form-control rgcpf" placeholder="cpf"> <br> 
-                <label>Email</label> <br> <input type="text" name="email" class="form-control" placeholder="email"> <br> 
-                <label>Data de nascimento</label> <br> <input type=date name="dataNasc" class="form-control data" > <br> 
-                <label for="categoria">Genero:</label> <br>
+                <label><b>Nome</b></label> <br> <input type=text name="nome" class="form-control nome" placeholder="nome"> <br>
+                <label><b>RG</b></label> <br> <input type="text" name="rg" class="form-control rgcpf" placeholder="rg"> <br> 
+                <label><b>CPF</b></label> <br> <input type="text" name="cpf" class="form-control rgcpf" placeholder="cpf"> <br> 
+                <label><b>Email</b></label> <br> <input type="text" name="email" class="form-control" placeholder="email"> <br> 
+                <label><b>Data de nascimento</b></label> <br> <input type=date name="dataNasc" class="form-control data" > <br> 
+                <label for="categoria"><b>Genero</b></label> <br>
                 <select name="cd_generoPessoa" class="form-select form-select-sm" aria-label="Default select example" id="genero">
                     <option value=1>MASCULINO</option>
                     <option value=2>FEMENINO</option>

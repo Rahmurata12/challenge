@@ -9,7 +9,7 @@ import java.util.List;
 
 import br.com.fiap.jdbc.factory.ConnectionFactory;
 import br.com.fiap.jdbc.model.Compra;
-import br.com.fiap.jdbc.model.Pessoa;
+
 
 public class CompraDAO {
 	
@@ -27,7 +27,6 @@ public class CompraDAO {
 			PreparedStatement stmt = connection.prepareStatement(sql);
 			stmt.setInt(1, cd_pessoa);
 			ResultSet rs = stmt.executeQuery();
-
 			while (rs.next()) {
 				Compra compra = new Compra();
 				compra.setDate_compra(rs.getDate(2));
@@ -43,4 +42,6 @@ public class CompraDAO {
 			throw new RuntimeException(e);
 		}
 	}
+	
+
 }

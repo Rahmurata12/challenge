@@ -1,14 +1,22 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<%@ page import="br.com.fiap.jdbc.model.Pessoa"%>
-<%@ page import="br.com.fiap.jdbc.dao.PessoaDAO"%>
+<%@ page import="br.com.fiap.jdbc.model.Compra"%>
+<%@ page import="br.com.fiap.jdbc.dao.CompraDAO"%>
 <%@ page import="java.util.ArrayList"%>
 <%@ page import="java.util.List"%>
+<%@ page import="br.com.fiap.jdbc.model.Pessoa"%>
+<%@ page import="br.com.fiap.jdbc.dao.PessoaDAO"%>
 <%
-PessoaDAO PessoaDAO = new PessoaDAO();
+CompraDAO CompraDAO = new CompraDAO();
+Compra Compra = new Compra();
+int cd_pessoa = Integer.parseInt(request.getParameter("cd_pessoa"));
+List<Compra> listarCompras = new ArrayList<Compra>();
+listarCompras = CompraDAO.listarTodos(cd_pessoa);
+%>
+<%
+PessoaDAO pessoaDAO = new PessoaDAO();
 Pessoa Pessoa = new Pessoa();
-List<Pessoa> listarPessoas = new ArrayList<Pessoa>();
-listarPessoas = PessoaDAO.listarTodos();
+Pessoa = pessoaDAO.buscaCd_pessoa(cd_pessoa);
 %>
 <!DOCTYPE html>
                             <html>
@@ -27,7 +35,7 @@ listarPessoas = PessoaDAO.listarTodos();
                                 <div class="container-login100" id="fundo">
                                     <div class="wrap-login100">
                                         <div class="col-12 col-sm-12 col-md-12 col-lg-12">
-                                            <span class="login100-form-title" id="log">Lista Pessoas</span>
+                                            <span class="login100-form-title" id="log"><%=Pessoa.getNome()%></span>
                                             <table class="table" id="tabela">
                                     
                                                 <div class="Categorias">
@@ -35,42 +43,28 @@ listarPessoas = PessoaDAO.listarTodos();
                                                 </div>
                                                 <thead>
                                                     <tr>
-                                                        <th>CD_PESSOA</th>
-                                                        <th>NOME</th>
-                                                        <th>RG</th>
-                                                        <th>CPF</th>
-                                                        <th>Email</th>
-                                                        <th>DATA_NASCIMENTO</th>
-                                                        <th>GENERO</th>
-                                                        <th></th>
+                                                    	<th>Código da Pessoa</th>
+                                                        <th>Data da compra</th>
+                                                        <th>Status</th>
+                                                        <th>Local da compra</th>
                                                     <tr>
                                                 </thead>
                                               <tbody>
 			<%
-			for (int i = 0; i < listarPessoas.size(); i++) {
-				Pessoa = listarPessoas.get(i);
+			for (int i = 0; i < listarCompras.size(); i++) {
+				Compra = listarCompras.get(i);
 			%>
 			<tr>
-				<td><%=Pessoa.getCd_pessoa()%></td>
-				<td><%=Pessoa.getNome() %></td>
-				<td><%=Pessoa.getRG()%></td>
-				<td><%=Pessoa.getCPF()%></td>
-				<td><%=Pessoa.getEMAIL()%></td>
-				<td><%=Pessoa.getData_nascimento()%></td>
-				<td><%=Pessoa.getCd_genero()%></td>
-				<td>
-					<input type="button" value="Excluir" class="btn btn-info" onclick="excluirPessoas(<%=Pessoa.getCd_pessoa()%>)" >
-					<input type="button" value="Editar" class="btn btn-info" onclick="editarPessoas(<%=Pessoa.getCd_pessoa()%>)" >
-					<input type="button" value="Compras" class="btn btn-info" onclick="compraPessoas(<%=Pessoa.getCd_pessoa()%>)" >
-				</td>
+				<td><%=Compra.getCd_pessoa()%></td>
+				<td><%=Compra.getDate_compra() %></td>
+				<td><%=Compra.getStatus()%></td>
+				<td><%=Compra.getLocal_compra()%></td>
 			</tr>
 			<%
 			}
 			%>
 		</tbody>
                                             </table>
-
-								<input type="button" value="Novo" class="btn btn-info" onclick="novoPessoa()" >									
                                         </div>
                                     </div>
                                 </div>
