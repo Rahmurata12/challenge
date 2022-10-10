@@ -45,6 +45,7 @@ public class CompraDAO {
 	
 	public void salvar(Compra compra) {
 		try {
+			System.out.println("teste");
 			String sql = "insert into compra (DATA_COMPRA,STATUS,LOCAL_COMPRA,CD_PESSOA) values(?,?,?,?)";
 			PreparedStatement stmt = connection.prepareStatement(sql);
 			
